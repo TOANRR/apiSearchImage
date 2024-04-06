@@ -59,7 +59,7 @@ def index():
         except  Exception:
              return jsonify("error")
     if request.method == 'GET':
-        return {"data" :"OK"}
+        return json.dumps{"data" :"OK"}
    
 
 if __name__=="__main__":
