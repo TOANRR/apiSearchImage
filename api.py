@@ -37,7 +37,7 @@ features = np.array(features)
 img_paths = np.array(img_paths)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST','GET'])
 def index():
     if request.method == 'POST':
         try:
@@ -58,6 +58,8 @@ def index():
             return s
         except  Exception:
              return jsonify("error")
+    if request.method == 'GET':
+        return {"data" :"OK"}
    
 
 if __name__=="__main__":
